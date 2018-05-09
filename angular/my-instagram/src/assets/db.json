@@ -1,0 +1,54 @@
+{
+    "users":[
+      {
+        "username" : "admin",
+        "password" : "admin"
+      },
+      {
+        "username" : "akshay",
+        "password" : "akshay"
+      }
+    ],
+    "imageList": [
+      {
+        "id": 1,
+        "name": "deepika_padukone",
+        "description": "pencil sketch of dp",
+        "location": "assets/images/deepika_padukone_ps.jpg",
+        "cols" : 2,
+        "rows" : 2
+      },
+      {
+        "id": 2,
+        "name": "owl",
+        "description": "pencil sketch of owl",
+        "location": "assets/images/owl-ps.jpg",
+        "cols" : 3,
+        "rows" : 3
+      },
+      {
+        "id": 3,
+        "name": "Robert D JR",
+        "description": "pencil sketch of RDJ",
+        "location": "/assets/images/rdj-ps.jpg",
+        "cols" : 2,
+        "rows" : 3
+      },
+      {
+        "id": 4,
+        "name": "Shivaji Maharaj",
+        "description": "pencil sketch of CSM",
+        "location": "/assets/images/shivaji-maharaj-ps.jpg",
+        "cols" : 2,
+        "rows" : 2
+      },
+      {
+        "id": 5,
+        "name": "other",
+        "description": "pencil sketch of other",
+        "location": "/assets/images/stock-vector-eye-realistic-sketch-of-beautiful-woman-eye-80890216.jpg",
+        "cols" : 2,
+        "rows" : 2
+      }
+    ]
+}
