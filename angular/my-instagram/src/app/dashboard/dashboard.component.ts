@@ -15,5 +15,4 @@ export class DashboardComponent implements  OnInit {
       this.imageList = this.dbService.getConfig('imageList');
       console.log(this.imageList);
     }
-
 }

@@ -17,7 +17,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RoutingModule } from './routing/routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material';
-
+import { LoginService } from './login/login.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,11 +35,13 @@ import { MatInputModule } from '@angular/material';
     CustomMaterialModuleModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    FlexLayoutModule,
   ],
   providers: [
     DbService,
     {provide: APP_INITIALIZER, useFactory: (config: DbService) => () => config.load(), deps: [DbService], multi: true }
+    , LoginService
   ],
 
   bootstrap: [AppComponent]

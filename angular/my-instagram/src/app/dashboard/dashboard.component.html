@@ -1,6 +1,11 @@
-<div class = "main">
-    <mat-card *ngFor="let image of imageList ; let i = index" class = "card">
-        <mat-card-title>{{image.name}}</mat-card-title>
+<mat-form-field class="search-form">
+  <input matInput placeholder="Search Picture" type="text">
+</mat-form-field>
+<button button="submit" mat-raised-button color="primary">Search</button>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.2%" fxLayoutAlign="center">
+    <mat-card *ngFor="let image of imageList ; let i = index" align = 'center'>
+        <mat-card-title xLayout.gt-xs="row" fxLayout.xs="column">{{image.name}}</mat-card-title>
     <img mat-card-image src ="{{image.location}}"/>
     <mat-card-content>
       {{image.description}}
@@ -10,15 +15,4 @@
         <button mat-button>SHARE</button>
       </mat-card-actions>
   </mat-card>
-  </div>
-
-
-  <!-- <mat-grid-list cols="4" rowHeight="100px">
-    <mat-grid-tile
-        *ngFor="let tile of imageList"
-        [colspan]="tile.cols"
-        [rowspan]="tile.rows">
-        {{tile.description}}
-        <img src = "{{tile.location}}"/>
-    </mat-grid-tile>
-  </mat-grid-list> -->
+</div>

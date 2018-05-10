@@ -3,6 +3,7 @@ import { DbService } from '../db.service';
 import { User } from '../models/user';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'login',
@@ -10,11 +11,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  users: User [];
   loginForm: FormGroup;
 
-  constructor(private dbService: DbService, private fb: FormBuilder,private router : Router) {
-    this.users = dbService.getConfig('users');
+  constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService) {
     this.createForm();
   }
   ngOnInit() {
@@ -27,12 +26,10 @@ export class LoginComponent implements OnInit {
     });
   }
   onSubmit() {
-    this.users.forEach(user => {
-      if (user.username === this.loginForm.value.name
-        && user.password === this.loginForm.value.password){
-          this.router.navigate(['dashboard']);
-        }
-    });
+    if (this.loginService.authenticate(this.loginForm)) {
+      this.router.navigate(['dashboard']);
+    }
+
   }
 
 

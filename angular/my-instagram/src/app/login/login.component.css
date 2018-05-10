@@ -1,16 +1,17 @@
 .login-card{
-  margin-top: auto;
-  margin-bottom : auto;
-  margin-right: auto;
-  margin-left: auto;
-  width :30%;
-  height:40%;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  height: 40%
+
 }
-.login-card.mat-card-content {
-  align-self: center
-}
+/* .login-card.mat-card-content {
+} */
 .login-div{
-  background-color: darkgray;
   width:100%;
-  height: 800px !important;
+
 }
