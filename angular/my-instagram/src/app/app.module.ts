@@ -4,9 +4,9 @@ import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
-// import { AngularFireModule } from 'angularfire2';
-// import { AngularFireDatabaseModule } from 'angularfire2/database';
-// import { AngularFireAuthModule } from 'angularfire2/auth';
+//  import { AngularFireModule } from 'angularfire2';
+//  import { AngularFireDatabaseModule } from 'angularfire2/database';
+//  import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CustomMaterialModuleModule } from './custom-material-module/custom-material-module.module';
@@ -27,16 +27,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   imports: [
     BrowserModule,
-    // AngularFireModule.initializeApp(environment.firebase),
-    // AngularFireDatabaseModule,
-    // AngularFireAuthModule,
+    //  AngularFireModule.initializeApp(environment.firebase),
+    //  AngularFireDatabaseModule,
+    //  AngularFireAuthModule,
     BrowserAnimationsModule,
-    RoutingModule,
-    CustomMaterialModuleModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatInputModule,
     FlexLayoutModule,
+    CustomMaterialModuleModule,
+    MatInputModule,
+    RoutingModule,
   ],
   providers: [
     DbService,
