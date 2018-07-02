@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DbService } from '../db.service';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'dashboard',
@@ -8,11 +9,30 @@ import { DbService } from '../db.service';
 })
 export class DashboardComponent implements  OnInit {
   imageList: any[];
-
-    constructor(private dbService: DbService) {
+  filteredImageList:any[] = [];
+    constructor(private dbService: DbService,private fb:FormBuilder) {
     }
+   
     ngOnInit() {
       this.imageList = this.dbService.getConfig('imageList');
       console.log(this.imageList);
+      this.imageList.forEach(element => {
+        this.filteredImageList.push(element);
+      });
+    
+    }
+    onSearchChange(searchString : string){
+      this.filteredImageList = [];
+      console.log(searchString.length)
+      if(searchString.length>0){
+        this.filteredImageList =this.imageList.filter(
+          image => image.name.includes(searchString));
+      }
+      else{
+        this.imageList.forEach(element => {
+          this.filteredImageList.push(element);
+        });
+      }
+      console.log(this.filteredImageList);
     }
 }

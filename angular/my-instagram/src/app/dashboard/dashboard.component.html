@@ -1,10 +1,13 @@
-<mat-form-field class="search-form">
-  <input matInput placeholder="Search Picture" type="text">
-</mat-form-field>
-<button button="submit" mat-raised-button color="primary">Search</button>
+    <mat-form-field class="search-form">
+        <input matInput placeholder="Search Picture" type="text" id = "searchText" (input)="onSearchChange($event.target.value)">
+    </mat-form-field>
+    <button button="submit" mat-raised-button color="primary">Search</button>
+
+
+
 
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.2%" fxLayoutAlign="center">
-    <mat-card *ngFor="let image of imageList ; let i = index" align = 'center'>
+    <mat-card *ngFor="let image of filteredImageList ; let i = index" align = 'center'>
         <mat-card-title xLayout.gt-xs="row" fxLayout.xs="column">{{image.name}}</mat-card-title>
     <img mat-card-image src ="{{image.location}}"/>
     <mat-card-content>

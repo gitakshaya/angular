@@ -4,11 +4,11 @@ import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
-//  import { AngularFireModule } from 'angularfire2';
-//  import { AngularFireDatabaseModule } from 'angularfire2/database';
-//  import { AngularFireAuthModule } from 'angularfire2/auth';
+// import { AngularFireModule } from 'angularfire2';
+// import { AngularFireDatabaseModule } from 'angularfire2/database';
+// import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomMaterialModuleModule } from './custom-material-module/custom-material-module.module';
 import { DbService } from './db.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,17 +19,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material';
 import { LoginService } from './login/login.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SearchFilterPipe } from './search-filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,
-    //  AngularFireModule.initializeApp(environment.firebase),
-    //  AngularFireDatabaseModule,
-    //  AngularFireAuthModule,
+    // AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireDatabaseModule,
+    // AngularFireAuthModule,
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -40,7 +42,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   providers: [
     DbService,
-    {provide: APP_INITIALIZER, useFactory: (config: DbService) => () => config.load(), deps: [DbService], multi: true }
+    { provide: APP_INITIALIZER, useFactory: (config: DbService) => () => config.load(), deps: [DbService], multi: true }
     , LoginService
   ],
 

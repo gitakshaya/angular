@@ -11,7 +11,9 @@ import { Router } from '@angular/router';
 export class AppComponent {
   isLoggedIn: boolean;
     constructor(private dbService: DbService, private loginService: LoginService, private router: Router) {
-
+      if ('true' === localStorage.getItem('isLoggedIn'))  {
+        this.isLoggedIn = true;
+      }
         loginService.isLoggedIn$.asObservable().subscribe(data => {
             if (data && 'true' === localStorage.getItem('isLoggedIn'))  {
             this.isLoggedIn = true;
