@@ -6,12 +6,18 @@
   -webkit-transform: translate3d(-50%, -50%, 0);
   -moz-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0);
-  height: 35%
+  height: 35%;
+  font-family:'Open Sans', sans-serif;
 
 }
-/* .login-card.mat-card-content {
-} */
+ .login-card.mat-card-content {
+   height: 100% !important;
+} 
 .login-div{
   width:100%;
 
 }
+.login-form{
+  height: 100%;
+}
+

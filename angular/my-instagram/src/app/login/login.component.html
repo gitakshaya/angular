@@ -1,8 +1,8 @@
 <div class="login-div" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.2%" fxLayoutAlign="center">
   <mat-card class="login-card" align = 'center'>
-    <mat-card-title>Login Detail</mat-card-title>
+    <mat-card-title>Login</mat-card-title>
     <mat-card-content>
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" class = "login-form">
         <mat-form-field class="example-full-width">
           <input matInput type ="text" placeholder = 'Username' formControlName="name" required>
         </mat-form-field>
@@ -10,6 +10,10 @@
         <mat-form-field class="example-full-width">
           <input matInput type="password" placeholder = 'Password' formControlName="password" required>
         </mat-form-field>
+        <br>
+        <div *ngIf = "areWrongCreds" class = "error-msg">
+            Please enter corrent username or password
+       </div>
         <br>
         <button type = "submit" mat-raised-button color = 'primary' [disabled]="!loginForm.valid">Login</button>
       </form>

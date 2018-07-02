@@ -12,6 +12,7 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  areWrongCreds : boolean;
 
   constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService) {
     this.createForm();
@@ -28,6 +29,9 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginService.authenticate(this.loginForm)) {
       this.router.navigate(['dashboard']);
+    }
+    else{
+      this.areWrongCreds = true
     }
 
   }
