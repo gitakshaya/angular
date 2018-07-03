@@ -6,6 +6,6 @@
 .error-msg{
     color: red;
     font-family: 'Lucida Sans';
-    font-style: italic;
     padding: 1em 0 0 0;
+    font-size: 0.7em;
 }

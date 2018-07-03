@@ -5,15 +5,15 @@
 
 
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.2%" fxLayoutAlign="center">
-    <mat-card *ngFor="let image of filteredImageList ; let i = index" align = 'center'>
-        <mat-card-title xLayout.gt-xs="row" fxLayout.xs="column">{{image.name}}</mat-card-title>
+    <mat-card *ngFor="let image of filteredImageList ; let i = index" align = 'center' class = "image-class" >
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column" align = "center">{{image.name}}</mat-card-title>
     <img mat-card-image src ="{{image.location}}"/>
     <mat-card-content>
       {{image.description}}
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+        <mat-icon (click) = "likeAction()">home</mat-icon>
+        <button mat-button (click) = "shareAction()">SHARE</button>
       </mat-card-actions>
   </mat-card>
 </div>

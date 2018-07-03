@@ -20,12 +20,14 @@ import { MatInputModule } from '@angular/material';
 import { LoginService } from './login/login.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SearchFilterPipe } from './search-filter.pipe';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

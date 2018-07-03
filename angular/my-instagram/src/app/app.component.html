@@ -1,9 +1,26 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span style= "width: 90%;">My Instagram</span>
+    <span style= "width: 90%;">Pencil Power</span>
+    <span *ngIf = '!isLoggedIn' class = "floatRight">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" class = "login-form">
+        <mat-form-field class="example-full-width">
+          <input matInput type ="text" placeholder = 'Username' formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput type="password" placeholder = 'Password' formControlName="password" required>
+        </mat-form-field>
+        <div *ngIf = "areWrongCreds" class = "error-msg">
+            Please enter corrent username or password
+       </div>
+        <button type = "submit" mat-raised-button color = 'primary' [disabled]="!loginForm.valid">Login</button>
+      </form>
+      </span>
     <span *ngIf = 'isLoggedIn' class = "floatRight">
       <button mat-fab color = "primary" (click)='logout()'>logout</button>
     </span>
   </mat-toolbar-row>
 </mat-toolbar>
+<div class="loading-overlay" *ngIf="loading">
+  <img src = "assets/images/pencil_loading.gif">   
+</div>
 <router-outlet></router-outlet>

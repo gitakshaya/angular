@@ -1,6 +1,6 @@
-<div class="login-div" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.2%" fxLayoutAlign="center">
-  <mat-card class="login-card" align = 'center'>
-    <mat-card-title>Login</mat-card-title>
+<div @goals class="login-div" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.2%" fxLayoutAlign="center">
+  <mat-card  class="login-card" align = 'center'>
+    <mat-card-title @goals>Login</mat-card-title>
     <mat-card-content>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" class = "login-form">
         <mat-form-field class="example-full-width">
