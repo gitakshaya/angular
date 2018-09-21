@@ -1,0 +1,35 @@
+<div @goals class="register-div" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.2%" fxLayoutAlign="center">
+    <mat-card  class="register-card" align = 'center'>
+      <mat-card-title @goals>Register</mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)" class = "login-form">
+          <mat-form-field class="example-full-width">
+            <input matInput type ="text" placeholder = 'Username' formControlName="name" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width">
+              <input matInput type ="text" placeholder = 'First name' formControlName="fName" required>
+          </mat-form-field>
+            <br>
+          <mat-form-field class="example-full-width">
+                <input matInput type ="text" placeholder = 'Last name' formControlName="lName" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width">
+            <input matInput type="password" placeholder = 'Password' formControlName="password" required>
+          </mat-form-field>
+          <br>
+          <div *ngIf = "areWrongCreds" class = "error-msg">
+              Please enter corrent username or password
+         </div>
+          <br>
+          <button type = "submit" mat-raised-button color = 'primary' [disabled]="!registerForm.valid">Register</button>
+        </form>
+      </mat-card-content>
+      <a class = "navlink" [routerLink]="['/login']">
+        Login
+      </a>
+    </mat-card>
+    
+  </div>
+  

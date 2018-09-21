@@ -50,7 +50,7 @@ export class AppComponent {
       this.isLoggedIn = false;
       this.loginService.isLoggedIn$.next(false);
       localStorage.setItem('isLoggedIn', 'false');
-      this.router.navigate(['register']);
+      this.router.navigate(['login']);
     }
     createForm() {
       this.loginForm = this.fb.group({

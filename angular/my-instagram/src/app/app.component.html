@@ -2,7 +2,7 @@
   <mat-toolbar-row>
     <span style= "width: 90%;">Pencil Power</span>
     <span *ngIf = '!isLoggedIn' class = "floatRight">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" class = "login-form">
+    <!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" class = "login-form">
         <mat-form-field class="example-full-width">
           <input matInput type ="text" placeholder = 'Username' formControlName="name" required>
         </mat-form-field>
@@ -13,8 +13,8 @@
             Please enter corrent username or password
        </div>
         <button type = "submit" mat-raised-button color = 'primary' [disabled]="!loginForm.valid">Login</button>
-      </form>
-      </span>
+      </form>-->
+      </span> 
     <span *ngIf = 'isLoggedIn' class = "floatRight">
       <button mat-fab color = "primary" (click)='logout()'>logout</button>
     </span>

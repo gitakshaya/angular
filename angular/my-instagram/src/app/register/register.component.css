@@ -1,0 +1,23 @@
+.register-card{
+    align-items: flex-end;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    height: 55%;
+    font-family:'Open Sans', sans-serif;
+  
+  }
+   .register-card.mat-card-content {
+     height: 100% !important;
+  } 
+  .register-div{
+    width:100%;
+  
+  }
+  .register-form{
+    height: 100%;
+  }
+  
